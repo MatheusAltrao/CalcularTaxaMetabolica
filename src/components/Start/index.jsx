@@ -8,8 +8,8 @@ const Start = ({ man, woman }) => {
       <h1>Escolha </h1>
       <div className="buttonarea">
 
-        <button className='btn-1' onClick={man}>Homem</button>
-        <button className='btn-2' onClick={woman}>Mulher</button>
+        <button className='btn-1 manButton' onClick={man}>Homem</button>
+        <button className='btn-2 womanButton' onClick={woman}>Mulher</button>
 
       </div>
 

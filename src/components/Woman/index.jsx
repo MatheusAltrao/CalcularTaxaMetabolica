@@ -25,11 +25,6 @@ const Woman = ({ retry }) => {
 
     setResult(role * (665 + ((9.6 * weight) + (1.8 * height) - (4.7 * year))))
 
-    console.log(result)
-
-    setWeight("")
-    setHeight("")
-    setYear("")
   }
   return (
     <>
@@ -81,13 +76,13 @@ const Woman = ({ retry }) => {
             <option value={1.21}>Nenhuma atividade</option>
             <option value={1.375}>Atividade Leve 1 a 3 dias </option>
             <option value={1.55}>Atividade Moderada 3 a 5 dias</option>
-            <option value={1.725}>Altamente Ativo 5 a 6 dais</option>
-            <option value={1.9}>Extremamente Ativo 7 dias e 2 vezes ao dia</option>
+            <option value={1.725}>Altamente Ativo 5 a 6 dias</option>
+            <option value={1.9}>Extremamente Ativo 7 dias e 2 vezes ao dias</option>
           </select>
         </label>
 
         <div className="buttonarea">
-          <button className='btn-2' onClick={calculate} >Calcular</button>
+          <button className='btn-2 ' onClick={calculate} >Calcular</button>
         </div>
 
 
@@ -99,7 +94,7 @@ const Woman = ({ retry }) => {
 
       </form>
 
-      <div className="buttonarea">
+      <div className="buttonarea back">
         <button onClick={retry} className='btn-2' >Voltar</button>
       </div>
     </>

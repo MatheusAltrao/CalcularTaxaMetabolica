@@ -2,3 +2,18 @@
   text-align: center;
   color: #fff;
 }
+
+.start h1 {
+  animation: fromTopAndbottom 1s ease backwards;
+  animation-delay: 0.2s;
+}
+
+.manButton {
+  animation: fromTopAndbottom 1s ease backwards;
+  animation-delay: 0.4s;
+}
+
+.womanButton {
+  animation: fromTopAndbottom 1s ease backwards;
+  animation-delay: 0.6s;
+}
