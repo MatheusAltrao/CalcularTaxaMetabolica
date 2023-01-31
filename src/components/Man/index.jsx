@@ -54,7 +54,7 @@ const Man = ({ retry }) => {
 
 
           <label className='label-input'>
-            Altura em centimetros
+            Altura em centímetros
             <input className='input-input border-cyan'
               type="number"
               value={height}

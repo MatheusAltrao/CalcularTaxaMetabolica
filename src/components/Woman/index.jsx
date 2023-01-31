@@ -52,7 +52,7 @@ const Woman = ({ retry }) => {
 
 
           <label className='label-input '>
-            Altura em centimetros
+            Altura em centímetros
             <input className='input-input border-purple'
               type="number"
               value={height}
