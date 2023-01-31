@@ -8,12 +8,13 @@ const Woman = ({ retry }) => {
   const [height, setHeight] = useState("")
   const [year, setYear] = useState("")
   const [result, setResult] = useState(1)
+  const [role, setRole] = useState()
 
   function calculate(ev) {
 
     ev.preventDefault()
 
-    if (!weight || !height || !year) {
+    if (!weight || !height || !year || !role) {
       alert('Preencha os campos corretamente')
       return
 
@@ -22,7 +23,7 @@ const Woman = ({ retry }) => {
       return
     }
 
-    setResult(parseInt(655) + parseInt((9.6 * weight)) + parseInt((1.8 * height)) - parseInt((4.7 * year)))
+    setResult(role * (665 + ((9.6 * weight) + (1.8 * height) - (4.7 * year))))
 
     console.log(result)
 
@@ -70,6 +71,21 @@ const Woman = ({ retry }) => {
           </label>
         </div>
 
+
+
+
+        <label className='label-input'>
+          Taxa de atividae na semana
+          <select onChange={(e) => setRole(e.target.value)} value={role} name="role" className='border-purple'>
+            <option value={1.2}>Escolha uma opção</option>
+            <option value={1.21}>Nenhuma atividade</option>
+            <option value={1.375}>Atividade Leve 1 a 3 dias </option>
+            <option value={1.55}>Atividade Moderada 3 a 5 dias</option>
+            <option value={1.725}>Altamente Ativo 5 a 6 dais</option>
+            <option value={1.9}>Extremamente Ativo 7 dias e 2 vezes ao dia</option>
+          </select>
+        </label>
+
         <div className="buttonarea">
           <button className='btn-2' onClick={calculate} >Calcular</button>
         </div>
@@ -77,7 +93,7 @@ const Woman = ({ retry }) => {
 
         {result > 1 &&
           <h2 className='text-result'> A sua taxa metabólica basal é de
-            <span className='color-purple'> {result}</span>.</h2>
+            <span className='color-purple'> {result.toFixed(2)}</span>.</h2>
         }
 
 

@@ -9,12 +9,13 @@ const Man = ({ retry }) => {
   const [height, setHeight] = useState("")
   const [year, setYear] = useState("")
   const [result, setResult] = useState(1)
+  const [role, setRole] = useState()
 
   function calculate(ev) {
 
     ev.preventDefault()
 
-    if (!weight || !height || !year) {
+    if (!weight || !height || !year || !role) {
       alert('Preencha os campos corretamente')
       return
 
@@ -23,14 +24,14 @@ const Man = ({ retry }) => {
       return
     }
 
-
-    setResult(parseInt(66.5) + parseInt((13.75 * weight)) + parseInt((5.0 * height)) - parseInt((6.8 * year)))
+    setResult(role * (66 + ((13.7 * weight) + (5 * height) - (6.8 * year))))
 
     console.log(result)
 
     setWeight("")
     setHeight("")
     setYear("")
+
   }
   return (
     <>
@@ -38,7 +39,7 @@ const Man = ({ retry }) => {
 
       <form className='form'>
         <div className="form-title">
-          <h1>Calcule a sua <br /> taxa <span>metabólica </span>basal.</h1>
+          <h1>Calcule a sua <br /> taxa <span className='color-cyan'>metabólica </span>basal.</h1>
         </div>
 
         <div className="inputs">
@@ -72,6 +73,19 @@ const Man = ({ retry }) => {
           </label>
         </div>
 
+
+        <label className='label-input'>
+          Taxa de atividae na semana
+          <select onChange={(e) => setRole(e.target.value)} value={role} name="role" className='border-cyan'>
+            <option value={1.2}>Escolha uma opção</option>
+            <option value={1.21}>Nenhuma atividade</option>
+            <option value={1.375}>Atividade Leve 1 a 3 dias </option>
+            <option value={1.55}>Atividade Moderada 3 a 5 dias</option>
+            <option value={1.725}>Altamente Ativo 5 a 6 dais</option>
+            <option value={1.9}>Extremamente Ativo 7 dias e 2 vezes ao dia</option>
+          </select>
+        </label>
+
         <div className="buttonarea">
           <button className='btn-1' onClick={calculate}>Calcular</button>
         </div>
@@ -80,7 +94,7 @@ const Man = ({ retry }) => {
 
         {result > 1 &&
           <h2 className='text-result'> A sua taxa metabólica basal é de
-            <span className='color-cyan'> {result}</span>.</h2>
+            <span className='color-cyan'> {result.toFixed(2)}</span>!</h2>
         }
 
 

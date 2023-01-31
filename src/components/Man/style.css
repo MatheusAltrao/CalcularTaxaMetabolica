@@ -32,7 +32,7 @@ span {
   flex-direction: column;
 }
 
-.label-input+.label-input {
+.label-input {
   margin-top: 1rem;
 }
 
@@ -58,6 +58,20 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+select {
+  height: 48px;
+  border-radius: 8px;
+  padding: 0 5px;
+  outline: none;
+
+  cursor: pointer;
+
+  width: 100%;
+
+  font-weight: 500;
+
 }
 
 

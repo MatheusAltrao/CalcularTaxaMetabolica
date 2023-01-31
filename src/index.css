@@ -45,15 +45,31 @@ button {
   font-size: 18px;
 
   text-transform: uppercase;
+
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
 }
 
 .btn-1 {
   background-color: var(--second-color);
+
+}
+
+.btn-1:hover {
+  background-color: transparent;
+  color: var(--second-color);
+  border: 2px solid var(--second-color);
 }
 
 .btn-2 {
   background-color: var(--primary-color);
   color: #fff;
+}
+
+.btn-2:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 
 .buttonarea {
